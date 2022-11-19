@@ -8,21 +8,30 @@ const data: Word[] = [
 ];
 
 const ArrangeSentence = () => {
+  //array of words to be displayed
   const [words, setWords] = React.useState<Word[]>([]);
+  //to keep track of the clicked word
   const [click, setClick] = useState(1);
+
   const [correctWords, setCorrectWords] = useState<string[]>([]);
 
   useEffect(() => {
+    //get data from database
     setWords(data);
   }, []);
 
+  //check if the word is in the correct position
   const checkCorrectWord = (word: Word): boolean => {
+    //if the word is in the correct position, return true
     return correctWords.includes(word.engWord);
   };
 
   const handleOnClick = (word: Word) => {
+    //check if the clicked word is in the correct position
     if (click === word.correctPosition) {
+      //if the clicked word is in the correct position, add it to the correctWords array
       setCorrectWords([...correctWords, word.engWord]);
+      //increment the click to keep track of the next word to be clicked
       setClick(click + 1);
     }
   };
@@ -33,7 +42,9 @@ const ArrangeSentence = () => {
       <section>
         <h2>Norwegian</h2>
         {words
+          //sort the words by the correct position
           .sort((a, b) => a.correctPosition - b.correctPosition)
+          //map through the correct words to display them
           .map((word, index) => {
             return <span key={index}>{`${word.foreignWord} `}</span>;
           })}
