@@ -23,6 +23,7 @@ const MemoryGame = () => {
               if (!selectedCard) {
                 alert("first card selected");
                 setSelectedCard(true);
+                setCardValue(card);
               } else {
                 alert("second card selected");
                 setSelectedCard(false);
