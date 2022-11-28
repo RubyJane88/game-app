@@ -2,7 +2,8 @@ import React from "react";
 import { Card, Container } from "react-bootstrap";
 
 const RollDice = () => {
-  const [dice, setDice] = React.useState(0);
+  const [die1, setDie1] = React.useState(1);
+  const [die2, setDie2] = React.useState(1);
 
   return (
     <Container
@@ -25,7 +26,10 @@ const RollDice = () => {
           marginBottom: "1rem",
           border: "50px 50px",
         }}
-        onClick={() => setDice(Math.floor(Math.random() * 6) + 1)}
+        onClick={() => {
+          setDie1(Math.floor(Math.random() * 6) + 1);
+          setDie2(Math.floor(Math.random() * 6) + 1);
+        }}
       >
         Roll
       </button>
@@ -43,7 +47,23 @@ const RollDice = () => {
           borderRadius: "1rem",
         }}
       >
-        {dice}
+        {die1}
+      </Card>
+      <Card
+        style={{
+          height: "4rem",
+          width: "5rem",
+          backgroundColor: "blue",
+          color: "white",
+          fontSize: "2rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1rem",
+          borderRadius: "1rem",
+        }}
+      >
+        {die2}
       </Card>
     </Container>
   );

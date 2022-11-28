@@ -8,9 +8,9 @@ function App() {
     <div className="App">
       <h1>Games</h1>
       {/*<MemoryGame />*/}
-      <ArrangeSentence />
+      {/*<ArrangeSentence />*/}
       {/*<ArrangeSentenceCopy />*/}
-      {/*<RollDice />*/}
+      <RollDice />
     </div>
   );
 }
