@@ -37,7 +37,7 @@ const RollDice = () => {
         style={{
           height: "4rem",
           width: "5rem",
-          backgroundColor: "blue",
+          backgroundColor: "green",
           color: "white",
           fontSize: "2rem",
           display: "flex",
